@@ -1,7 +1,6 @@
 const container = document.querySelector("#card_container");
-const dificulty = document.getElementById("buttons");
+const dificulty = document.querySelector("#buttons");
 const cardPair = []
-var checkTest = null;
 
 //get the images sources
 var images = [];
@@ -23,7 +22,6 @@ function new_pair(){
     let random = Math.floor(Math.random() * 44)
     for(let i=0; i<2; i++){
         container
-        .appendChild(Object.assign(document.createElement("div"), {classList: "card_space"}))
         .appendChild(Object.assign(document.createElement("div"),{classList: "card"}))
         .append(Object.assign(document.createElement("img"), {src:images[random], classList: "inner_img card_back"}),Object.assign(document.createElement("img"), {src:"media/PlaceHolder.png", classList:"inner_img card_front"}))
     }
@@ -52,13 +50,14 @@ container.addEventListener("click", (ev) =>{
 
 //function to evaluate if you found the pairs
 //see if 2 cards has been flip
+
 const startInterval=()=>{
     checkTest = setInterval(()=>{
         if (cardPair.length > 1){
             check_pair();
             stopInterval();
         }
-    }, 1600);
+    }, 600);
 }
 
 const stopInterval = () =>{
@@ -70,11 +69,8 @@ const stopInterval = () =>{
 const check_pair = () =>{
     if(cardPair[0].getElementsByTagName("img")[0].src.match(cardPair[1].getElementsByTagName("img")[0].src)){
         correct_pair();
-        card_flip();
-    }else{
-        card_flip(), 1000;
-    }
-    cardPair.splice(0, cardPair.length);
+        }
+    pair_card_flip();
     startInterval();
 }
 
@@ -84,11 +80,11 @@ function correct_pair(){
     }) 
 }
 
-function card_flip(){
-    cardPair.forEach(card => {
-        card.classList != "flipped"
-        ? card.classList.toggle("flipped") : card_flip();
-    })
+function pair_card_flip(){
+    setTimeout(() => {
+        cardPair.forEach(card => card.classList.toggle("flipped"))
+        cardPair.splice(0, cardPair.length);
+    }, 600)
 }
 
 
