@@ -34,7 +34,7 @@ body{
     background-color: rgba(230, 120, 255, 0.8);
 
 }
-#the_back{
+#background{
     margin: 0;
     width: 100%;
     height: 100vh;
@@ -44,6 +44,7 @@ body{
     justify-content: center;
     align-items: center;
     justify-items: center;
+    overflow: auto;
 }
 #card_container{
     width: 80vw;
