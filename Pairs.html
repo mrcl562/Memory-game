@@ -9,12 +9,19 @@
     </head>
     <body>
         <section id="background">
-            <section id="buttons">
-                <button onclick="newElement(2)" class="dificulty_button" >BEGINNER</button>
-                <button onclick="newElement(4)" class="dificulty_button" >EASY</button>
-                <button onclick="newElement(8)" class="dificulty_button" >NORMAL</button>
-                <button onclick="newElement(12)" class="dificulty_button" >HARD</button>
-                <button onclick="newElement(16)" class="dificulty_button" >CHAOS</button>
+            <section id="chronometer">
+                <div class="minutes"></div>
+                <div class="space">:</div>
+                <div class="seconds"></div>
+                <div class="space">:</div>
+                <div class="miliseconds"></div>
+            </section>
+            <section id="dificulty_buttons">
+                <button onclick="newElement(2)" class="button" >BEGINNER</button>
+                <button onclick="newElement(4)" class="button" >EASY</button>
+                <button onclick="newElement(8)" class="button" >NORMAL</button>
+                <button onclick="newElement(12)" class="button" >HARD</button>
+                <button onclick="newElement(16)" class="button" >CHAOS</button>
             </section>
             <div id="card_container"></div>
         </section>
