@@ -10,11 +10,9 @@ var minutes = 0;
 var pairs_found = 0;
 var active_pairs;
 
-
 const find_image = "media/find.png";
 const front_image = "media/PlaceHolder.png"
 const cardPair = []
-
 
 //get the images sources
 var images = [];
