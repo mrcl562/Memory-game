@@ -12,7 +12,9 @@
     display: grid;
     align-items: center;
     justify-items: center;
+    align-content: space-evenly;
     overflow: auto;
+    grid-template-rows: 1fr 5fr;
 }
 
 #dificulty_buttons{
@@ -39,20 +41,28 @@
     background-color: rgba(230, 120, 255, 0.8);
 }
 
-#chronometer{
-    display:none;
+#stopwatch{
+    display: none;
     grid-template-columns: repeat(5, 1fr);
     align-items: center;
     justify-items: center;
     width: 50vw;
-    height: 20vh;
-    font-size: 20vh;
+    height: 12vh;
+    font-size: 10vh;
+    font-family: monospace, sans-serif;
+    color: aliceblue;
+    background-color: rgb(202, 27, 71);
+    border-radius: 1vw;
+    border: 3px solid rgb(255, 255, 255);
 }
+
 
 #card_container{
     width: 80vw;
     display: grid;
     justify-items: center;
+    align-items: center;
+    align-content: center;
     grid-template-columns: repeat(auto-fit, minmax(8vw, 1fr));
     gap: 1rem;
 }
@@ -98,10 +108,20 @@
 }
 
 @media(max-width: 451px){
+    #background{
+        padding: 20px 0;
+        grid-template-rows: repeat(11, 1fr);
+        height: auto;
+    }
+    #stopwatch{
+        font-size: 7vw;
+        grid-row: 10/ 12;
+        width: 70vw;
+    }
     #card_container{
         width: 80vw;
-        height: 90vh;
         grid-template-columns: repeat(auto-fit, minmax(15vw, 1fr));
+        grid-row: 1/10;
     }
     .card{
         width: 15vw;
