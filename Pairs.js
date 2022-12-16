@@ -1,12 +1,15 @@
 const container = document.querySelector("#card_container");
 const dificulty = document.querySelector("#dificulty_buttons");
 const chronometer = document.querySelector("#stopwatch");
+
 var miliseconds_display = document.querySelector(".miliseconds");
 var seconds_display = document.querySelector(".seconds");
 var minutes_display = document.querySelector(".minutes");
-var miliseconds = 0;
-var seconds = 0;
-var minutes = 0;
+
+let miliseconds = 0;
+let seconds = 0;
+let minutes = 0;
+
 var pairs_found = 0;
 var active_pairs;
 
@@ -39,9 +42,11 @@ function new_caard_pair(){
     let random = Math.floor(Math.random() * 44)
     for(let i=0; i<2; i++){
         container
-        .appendChild(Object.assign(document.createElement("div"),{classList: "card"}))
-        .append(Object.assign(document.createElement("img"), {src:images[random], classList: "inner_img card_back"})
-               ,Object.assign(document.createElement("img"), {src:front_image, classList:"inner_img card_front"}))
+            .appendChild(Object.assign(document.createElement("div"),{classList: "card"}))
+            .append(
+                Object.assign(document.createElement("img"), {src:images[random], classList: "inner_img card_back"}),
+                Object.assign(document.createElement("img"), {src:front_image, classList:"inner_img card_front"})
+            )
     }
 }
 //third part sorts the created elements to random spot
